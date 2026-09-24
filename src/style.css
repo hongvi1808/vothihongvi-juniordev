@@ -81,6 +81,7 @@ p {
   font-size: 20px;
   color: var(--second);
   opacity: 0.8;
+  text-wrap: wrap;
   /* line-height: 24px; */
 
   @media (max-width: 1024px) {
@@ -111,8 +112,12 @@ a {
 }
 
 section {
-  padding: 0 calc((100% - var(--container))/2);
-  height: 100vh;
+  padding: 56px calc((100% - var(--container))/2);
+  max-height: 100vh;
+
+  @media (max-width: 1024px) {
+    padding: 24px 8px;
+  }
 }
 
 .row {
@@ -129,22 +134,20 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column
+  }
 }
 
 .row-gap {
   display: flex;
   align-items: center;
   gap: 24px;
-}
 
-#hero-section {
-  background-color: var(--surface);
-  padding-top: 8px;
-}
-
-.menu {
-  font-size: 14px;
-  margin-left: 90px;
+  @media (max-width: 1024px) {
+    flex-direction: column
+  }
 }
 
 .btn-second {
@@ -157,9 +160,32 @@ section {
   background-color: var(--primary);
 }
 
+.subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+  color: var(--second);
+}
+.column-gap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+#hero-section {
+  background-color: var(--surface);
+  padding-top: 8px;
+  position: relative;
+}
+
+.menu {
+  font-size: 14px;
+  margin-left: 90px;
+}
+
 .hero__title {
   letter-spacing: 0;
-  margin-bottom: 22px;
+  margin-bottom: 36px;
+  width: 55%;
 }
 
 .hero__title span {
@@ -173,8 +199,8 @@ section {
   content: "";
   position: absolute;
   z-index: -1;
-  left: -4px;
-  right: -4px;
+  left: 16px;
+  right: -16px;
   bottom: 4px;
   height: 40px;
   background: var(--primary);
@@ -188,13 +214,10 @@ section {
 
 .hero__visual {
   position: absolute;
-
   right: 40px;
   bottom: 0;
-
   width: 40%;
   height: 80%;
-
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -207,16 +230,10 @@ section {
   border-radius: 45% 45% 0 0;
 }
 
-
-/* Customers */
-
-
 .hero__avatars {
   position: relative;
-
   width: 74px;
   height: 38px;
-
   display: flex;
   align-items: center;
 }
@@ -225,9 +242,7 @@ section {
 .hero__avatars span {
   width: 34px;
   height: 34px;
-
   border-radius: 50%;
-
   border: 2px solid #fff;
 }
 
@@ -239,7 +254,6 @@ section {
 
 .hero__avatars span {
   position: absolute;
-
   background: var(--surface);
 }
 
@@ -260,10 +274,9 @@ section {
   gap: 5px;
 }
 
-
 .hero__stat-content small,
 .hero__rating small {
-  font-size: 10px;
+  font-size: 12px;
   opacity: 0.7;
   color: var(--second);
 }
@@ -284,4 +297,129 @@ section {
 
 .stars span {
   color: #e4e3dd;
+}
+
+#logo-section {
+  height: auto;
+}
+
+#logo-section img {
+  width: 10%;
+}
+
+#feature-section {
+  text-align: center;
+}
+
+.feature__content {
+  margin-top: 84px;
+}
+
+.feature__content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  /* width: 33%; */
+}
+
+.feature__content p {
+  width: 70%;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.feature__content span {
+  width: 4px;
+  height: 120px;
+  background: var(--line);
+  opacity: 0.08;
+}
+
+#content-section {
+  background-color: var(--surface);
+  min-height: 80vh;
+}
+
+.content__left {
+  width: 60%;
+}
+
+.content-video {
+  width: 400px;
+  height: 500px;
+  background: #e5e3dc;
+  border-radius: 195px 195px 0 0;
+  position: relative;
+
+  display: flex;
+  top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.content__title {
+  text-align: justify;
+  width: 100% !important;
+  margin-bottom: 24px !important;
+}
+
+.content__desc {
+  font-size: 18px;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  margin-bottom: 36px;
+}
+
+#service-section{
+  
+}
+
+.service__content  {
+  margin-top: 48px;
+  gap: 18px;
+}
+.service__content p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.service__content span {
+  height: 2px;
+  width: 100%;
+  background: var(--line);
+  opacity: 0.8;
+}
+
+#team-section {
+  background-color: var(--surface);
+  max-height: 100vh;
+}
+.team__desc {
+  width: 40%;
+  font-size: 16px;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+#team-section img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #fff;
+   object-fit: cover;
+  position: relative;
+  z-index: 3;
+}
+
+#faq-section {
+
 }
