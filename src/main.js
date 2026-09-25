@@ -2,10 +2,17 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 
 const container = document.getElementById("robo-container");
 const heroSection = document.getElementById("hero-section");
+const featureSection = document.getElementById("feature-section");
+const contentSection = document.getElementById("content-section");
+const serviceSection = document.getElementById("service-section");
+gsap.registerPlugin(ScrollTrigger);
+
 
 //sence
 const scene = new THREE.Scene()
@@ -37,7 +44,7 @@ loader.load('robo.glb', (glb) => {
         action.play();
         //nhay tai cho
         gsap.to(roboModel.position, {
-            y: -1.25,
+            y: roboModel.position.y + 0.5,
             duration: 1,
             ease: "power2.out",
             yoyo: true,
@@ -55,7 +62,7 @@ loader.load('robo.glb', (glb) => {
 
 //render
 const rendered = new THREE.WebGLRenderer({ alpha: true, antialias: true })
-rendered.setSize(container.clientWidth, window.innerHeight)
+rendered.setSize(window.innerWidth, window.innerHeight)
 container.appendChild(rendered.domElement)
 
 
@@ -68,13 +75,11 @@ topLight.position.set(5, 5, 3)
 scene.add(topLight)
 
 //animate
-heroSection.addEventListener("mousemove", (event) => {
+window.addEventListener("mousemove", (event) => {
     if (!roboModel) return;
-    const rect = heroSection.getBoundingClientRect();
+    const mouseX = (event.clientX / window.innerWidth) * 2 - 2;
 
-    const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 2;
-
-    const mouseY = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+    const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
     gsap.to(roboModel.rotation, {
         y: mouseX * 0.8,
@@ -85,6 +90,7 @@ heroSection.addEventListener("mousemove", (event) => {
         overwrite: true,
     });
 });
+
 
 function animate() {
     requestAnimationFrame(animate);
@@ -98,7 +104,42 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     rendered.setSize(container.clientWidth, window.innerHeight)
-
 })
 animate()
 
+
+gsap.fromTo(container,
+    {
+        x: 0,
+        y: 0,
+        opacity: 1
+    }, {
+    x: '25vw',
+    y: '100vh',
+    scale: 0.5, duration: 2,
+
+    scrollTrigger: {
+        trigger: featureSection,
+        start: "top bottom",
+        end: "top center",
+        scrub: 1
+    }
+}
+);
+gsap.fromTo(container,
+    {   x: '25vw',
+        y: '100vh',
+        opacity: 1
+    }, {
+    x: '-55vw',
+    y: '200vh',
+    scale: 1, duration: 5,
+
+    scrollTrigger: {
+        trigger: container,
+        start: "end end",
+        end: "end end",
+        scrub: 1
+    }
+}
+);
