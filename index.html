@@ -6,83 +6,86 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="./src/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="robo.glb" as="fetch" type="model/gltf-binary" crossorigin="anonymous">
+
   <title>vothihongvi-junioranimatedwebdeveloper</title>
 </head>
 
 <body>
+  <div class="parent">
+    <div id="robo-container"></div>
+    <section id="hero-section">
+      <div class="row-between">
 
-  <section id="hero-section">
-    <div class="row-between">
+        <div class="row">
+          <a href="/" class="logo">
+            <h3>Sark</h3>
+          </a>
+          <nav class="menu row-gap">
+            <a href="/">Demos</a>
+            <a href="/">About</a>
+            <a href="/">Blog</a>
+            <a href="/">Pages</a>
+            <a href="/">Contact</a>
+          </nav>
+        </div>
 
-      <div class="row">
-        <a href="/" class="logo">
-          <h3>Sark</h3>
-        </a>
-        <nav class="menu row-gap">
-          <a href="/">Demos</a>
-          <a href="/">About</a>
-          <a href="/">Blog</a>
-          <a href="/">Pages</a>
-          <a href="/">Contact</a>
-        </nav>
-      </div>
+        <div class="row-gap">
+          <a href="/" class="menu">
+            Login
+          </a>
 
-      <div class="row-gap">
-        <a href="/" class="menu">
-          Login
-        </a>
-
-        <button href="/" class="btn-second">
-          Get Started Free
-        </button>
-      </div>
-    </div>
-    <div class="row-gap" style="padding-top: 84px">
-
-      <div>
-        <h1 class="hero__title">The right SEO to
-          boost <span>your rankings</span>
-        </h1>
-        <p class="hero__desc">Search engine optimization is an ever-changing practice dictated by updates in algorithms
-          & technological innovation. Get discovered by the right SEO agency.</p>
-        <button class="btn-primary">Get Started Free</button>
-
-        <div class="row-center" style="margin-top: 80px;">
-
-          <div class="row-gap">
-            <div class="hero__avatars">
-              <img src="./public/avata-hero.webp" alt="">
-              <span></span>
-              <span></span>
-            </div>
-
-            <div class="hero__stat-content">
-              <!-- <strong>38,482</strong> -->
-              <h3>38,482</h3>
-              <small>Happy Customers</small>
-            </div>
-          </div>
-
-          <div class="divider-vertical"></div>
-
-          <div class="hero__stat-content">
-            <h3>4.8/5</h3>
-            <div class="row-gap">
-              <div class="stars">
-                ★★★★<span>★</span>
-              </div>
-              <small>Rating</small>
-            </div>
-          </div>
-
+          <button href="/" class="btn-second">
+            Get Started Free
+          </button>
         </div>
       </div>
-    </div>
+      <div class="row-gap" style="padding-top: 84px">
 
-    <div class="hero__visual">
-      <div class="hero__shape"></div>
-    </div>
-    </div>
+        <div>
+          <h1 class="hero__title">The right SEO to
+            boost <span>your rankings</span>
+          </h1>
+          <p class="hero__desc">Search engine optimization is an ever-changing practice dictated by updates in
+            algorithms
+            & technological innovation. Get discovered by the right SEO agency.</p>
+          <button class="btn-primary">Get Started Free</button>
+
+          <div class="row-center" style="margin-top: 80px;">
+
+            <div class="row-gap">
+              <div class="hero__avatars">
+                <img src="./public/avata-hero.webp" alt="">
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="hero__stat-content">
+                <!-- <strong>38,482</strong> -->
+                <h3>38,482</h3>
+                <small>Happy Customers</small>
+              </div>
+            </div>
+
+            <div class="divider-vertical"></div>
+
+            <div class="hero__stat-content">
+              <h3>4.8/5</h3>
+              <div class="row-gap">
+                <div class="stars">
+                  ★★★★<span>★</span>
+                </div>
+                <small>Rating</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__shape"></div>
+      </div>
   </section>
   <section id="logo-section" class="row-between">
     <p> 1000+ Big brands trust us
@@ -129,8 +132,6 @@
       <div class="content-video">
       </div>
     </div>
-    </div>
-    </div>
     <div class="content__right">
       <h2 class="hero__title content__title">
         We favor increasing the <span>visibility of the website</span>
@@ -151,7 +152,6 @@
           </p>
         </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -312,83 +312,83 @@
     </div>
 
   </section>
-  <section id="footer-section" >
+  <section id="footer-section">
     <div class="row-between">
-    <div class="footer__brand column-gap">
-      <a href="#">
-        <span class="logo-icon"></span>
-        <h2>Sark</h2>
-      </a>
+      <div class="footer__brand column-gap">
+        <a href="#">
+          <span class="logo-icon"></span>
+          <h2>Sark</h2>
+        </a>
 
+        <p>
+          There are many variations of passages
+          of Lorem Ipsum available in a majority.
+        </p>
+
+        <form class="subscribe-form">
+          <input type="email" placeholder="Enter your email" aria-label="Email address" />
+          <button class="btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-column">
+        <h3>Services</h3>
+
+        <ul>
+          <li><a href="#">Incident Responder</a></li>
+          <li><a href="#">Secure Managed IT</a></li>
+          <li><a href="#">Check website Url</a></li>
+          <li><a href="#">Locker Security</a></li>
+        </ul>
+      </div>
+      <!-- About -->
+      <div class="footer-column">
+        <h3>About Us</h3>
+
+        <ul>
+          <li><a href="#">Payment Plans</a></li>
+          <li><a href="#">Make saving More</a></li>
+          <li><a href="#">Tax Calculator</a></li>
+          <li><a href="#">Talk To Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-column footer-contact">
+        <h3>Contact Info</h3>
+
+        <ul>
+          <li>
+            <span>
+              455 West Orchard Street<br />
+              Kings Mountain, NC 280867
+            </span>
+          </li>
+
+          <li>
+            <span class="contact-icon">☎</span>
+            <a href="tel:+088246742710">
+              +088 (246) 6427-2710
+            </a>
+          </li>
+
+          <li>
+            <span class="contact-icon">✉</span>
+            <a href="mailto:example@gmail.com">
+              example@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
       <p>
-        There are many variations of passages
-        of Lorem Ipsum available in a majority.
+        © 2022 Sharko All Rights Reserved.
+        Designed by Finestdevs
       </p>
-
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" aria-label="Email address" />
-        <button class="btn-primary" type="submit">Subscribe</button>
-      </form>
     </div>
-    <div class="footer-column">
-      <h3>Services</h3>
-
-      <ul>
-        <li><a href="#">Incident Responder</a></li>
-        <li><a href="#">Secure Managed IT</a></li>
-        <li><a href="#">Check website Url</a></li>
-        <li><a href="#">Locker Security</a></li>
-      </ul>
-    </div>
-    <!-- About -->
-    <div class="footer-column">
-      <h3>About Us</h3>
-
-      <ul>
-        <li><a href="#">Payment Plans</a></li>
-        <li><a href="#">Make saving More</a></li>
-        <li><a href="#">Tax Calculator</a></li>
-        <li><a href="#">Talk To Us</a></li>
-      </ul>
-    </div>
-
-     <!-- Contact -->
-    <div class="footer-column footer-contact">
-      <h3>Contact Info</h3>
-
-      <ul>
-        <li>
-          <span>
-            455 West Orchard Street<br />
-            Kings Mountain, NC 280867
-          </span>
-        </li>
-
-        <li>
-          <span class="contact-icon">☎</span>
-          <a href="tel:+088246742710">
-            +088 (246) 6427-2710
-          </a>
-        </li>
-
-        <li>
-          <span class="contact-icon">✉</span>
-          <a href="mailto:example@gmail.com">
-            example@gmail.com
-          </a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-  </div>
-  <div class="footer-bottom">
-    <p>
-      © 2022 Sharko All Rights Reserved.
-      Designed by Finestdevs
-    </p>
-  </div>
   </section>
+  </div>
   <script type="module" src="/src/main.js"></script>
 
 </body>
