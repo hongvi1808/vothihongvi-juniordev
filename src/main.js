@@ -7,10 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 const container = document.getElementById("robo-container");
-const heroSection = document.getElementById("hero-section");
 const featureSection = document.getElementById("feature-section");
 const contentSection = document.getElementById("content-section");
-const serviceSection = document.getElementById("service-section");
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -94,7 +92,6 @@ window.addEventListener("mousemove", (event) => {
 
 function animate() {
     requestAnimationFrame(animate);
-    // Tính thời gian trôi qua (delta time)
     const delta = clock.getDelta();
     if (mixer) mixer.update(delta);
     rendered.render(scene, camera)
@@ -106,13 +103,19 @@ window.addEventListener('resize', () => {
     rendered.setSize(container.clientWidth, window.innerHeight)
 })
 animate()
-
-
+gsap.to(container, {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    y: 0,
+    duration: 1.2,
+    ease: "power2.out",
+});
 gsap.fromTo(container,
     {
         x: 0,
         y: 0,
-        opacity: 1
+        opacity: 1,
     }, {
     x: '25vw',
     y: '100vh',
@@ -120,26 +123,37 @@ gsap.fromTo(container,
 
     scrollTrigger: {
         trigger: featureSection,
-        start: "top bottom",
-        end: "top center",
+        start: "center bottom",
+        end: "center center",
         scrub: 1
     }
-}
-);
+});
 gsap.fromTo(container,
-    {   x: '25vw',
+    {
+        x: '25vw',
         y: '100vh',
         opacity: 1
     }, {
     x: '-55vw',
-    y: '200vh',
-    scale: 1, duration: 5,
+    y: '190vh',
+    scale: 1, duration: 2,
 
     scrollTrigger: {
-        trigger: container,
-        start: "end end",
-        end: "end end",
+        trigger: contentSection,
+        start: "center bottom",
+        end: "center center",
         scrub: 1
     }
 }
 );
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    ScrollTrigger.refresh();
+});

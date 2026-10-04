@@ -113,7 +113,7 @@ a {
 
 section {
   padding: 56px calc((100% - var(--container))/2);
-  max-height: 100vh;
+  min-height: 80vh;
   z-index: 1;
   position: relative;
 
@@ -306,6 +306,7 @@ section {
 
 #logo-section {
   height: auto;
+  padding-bottom: 56px;
 }
 
 #logo-section img {
@@ -429,6 +430,7 @@ section {
 
 #faq-section {
   justify-items: center;
+  min-height: auto !important;
 }
 
 .faq__list {
@@ -505,6 +507,10 @@ section {
 .faq-answer p {
   font-size: 16px;
 }
+#cta-section {
+  min-height: auto !important;
+
+}
 
 .cta__container {
   background-color: var(--primary);
@@ -514,6 +520,7 @@ section {
 }
 
 #footer-section {
+  min-height: auto !important;
   background-color: var(--surface);
 }
 
